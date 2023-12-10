@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .site-header {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile-container {
+                max-width: 100%;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info {
+                margin-top: 20px;
+            }
+
+            .profile-details {
+                flex-direction: column;
+            }
+
+            .profile-summary,
+            .profile-skills,
+            .profile-stats,
+            .contest-rating,
+            .photo-section {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+
+            .info-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .skill-category {
+                flex: 1 1 100%;
+            }
+        }
+
+        .logo-container {
+            flex: 0 0 auto;
+        }
+
+        .logo {
+            width: 60px;
+            /* Adjust the size as needed */
+            height: auto;
+        }
+
+        .main-navigation {
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .main-navigation a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .main-navigation a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        background-color: white; /* Replace with your actual image file name */
+            color: #333;
+        }
+
+        .profile-container {
+            max-width: 1080px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            color: #fff;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 2px solid #8ce6df;
+            width: 80px;
+            height: 80px;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h1 {
+    margin: 0;
+    font-size: 24px;
+    margin-left: 250px; /* Default margin */
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+}
+
+
+        .profile-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #010109;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .profile-summary,
+        .profile-skills,
+        .profile-stats,
+        .contest-rating,
+        .photo-section {
+            flex: 1 1 100%;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-summary h2,
+        .profile-skills h2,
+        .profile-stats h2,
+        .contest-rating h2,
+        .photo-section h2 {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4285f4;
+        }
+
+        .skill-category,
+        .rating-item {
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .skill-category:hover,
+        .rating-item:hover,
+        .photo-section:hover {
+            background: rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #ffc107;
+        }
+
+        p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .badge {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .contest-rating .rating-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-left: 50px;
+        }
+
+        .contest-rating .rating-item:last-child {
+            border-bottom: none;
+        }
+
+        .contest-rating .label {
+            color: #777;
+            font-weight: bold;
+        }
+
+        .contest-rating .value {
+            font-size: 18px;
+            color: #4285f4;
+        }
+
+        .contest-rating .badge {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .photo-section {
+            max-width: 100%;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .photo-section h2 {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .photo-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .photo-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .photo-description {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .photo-button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .profile-summary,
+            .profile-skills,
+            .profile-stats,
+            .contest-rating,
+            .photo-section {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+
+            .profile-summary,
+            .profile-skills,
+            .profile-stats,
+            .contest-rating,
+            .photo-section {
+                flex: 1 1 calc(33.33% - 20px);
+            }
+        }
+
+        .profile-summary {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-summary h2 {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .summary-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .info-item {
+            flex: 1 1 calc(50% - 10px);
+            margin: 10px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #4285f4;
+        }
+
+        .info-value {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Add the following CSS inside your existing style tag or external CSS file */
+
+        .badges-section {
+            flex: 1 1 100%;
+        }
+
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3c74e6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        
+    </style>
+    <title>LeetCode Profile</title>
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="founder.png" alt="Profile Image" width="80">
+            <div class="profile-info">
+                <h1>My LeetCode Profile</h1>
+                <h2>Vinay Kumar</h2>
+                <p class="username">vinaykumarADV</p>
+                <p class="rank">Rank: 33,646</p>
+                <p class="bio">I am a skilled Java developer and YouTuber with experience in website creation, database
+                    management, and system design. Fluent in both Hindi and English communication. 5 years teaching
+                    experience in Class 8th, 9th, 10th, 11th & 12th.</p>
+
+                    <a href="https://advindiancoder.github.io/Linktree/"> <button>Know More</button></a>
+               
+            </div>
+        </div>
+
+        <div class="profile-summary">
+            <h2>ADV Indian Coder | CEO & Founder</h2>
+            <div class="summary-info">
+                <div class="info-item">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">India</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Education:</span>
+                    <span class="info-value">DSCET (Anna University)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Website:</span>
+                    <a href="https://advindiancoder.com" target="_blank" class="info-value">advindiancoder.com</a>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">GitHub:</span>
+                    <span class="info-value">ADVindiancoder</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Twitter:</span>
+                    <span class="info-value">ADV_India_coder</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">LinkedIn:</span>
+                    <span class="info-value">vinay-kumar860964</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="profile-skills">
+            <h2>Skills</h2>
+
+            <div class="skill-category">
+                <h3>Advanced</h3>
+                <p>Dynamic Programming: 111</p>
+                <p>Backtracking: 28</p>
+                <p>Divide and Conquer: 20</p>
+            </div>
+
+            <div class="skill-category">
+                <h3>Intermediate</h3>
+                <p>Hash Table: 105</p>
+                <p>Math: 85</p>
+                <p>Depth-First Search: 78</p>
+            </div>
+
+            <div class="skill-category">
+                <h3>Fundamental</h3>
+                <p>Array: 312</p>
+                <p>String: 143</p>
+                <p>Sorting: 79</p>
+                <p>Two Pointers: 69</p>
+                <p>Matrix: 50</p>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+
+        <div class="contest-rating">
+            <h2>Contest Rating</h2>
+    
+            <div class="rating-item">
+                <div class="label">Global Ranking</div>
+                <div class="value">395,210/469,284</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Attended</div>
+                <div class="value">5</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Top</div>
+                <div class="value">84.52%</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Solved Problems</div>
+                <div class="value">698</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Solved Easy</div>
+                <div class="value">242 / 768</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Beats 99.0%</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Solved Medium</div>
+                <div class="value">373 / 1572</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Beats 98.5%</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Solved Hard</div>
+                <div class="value">83 / 653</div>
+            </div>
+    
+            <div class="rating-item">
+                <div class="label">Beats 96.4%</div>
+            </div>
+
+        <div class="profile-stats">
+            <h2>Community Stats</h2>
+            <p>Views: 11k</p>
+            <p>Last week: 600</p>
+            <!-- Add more stats as needed -->
+        </div>
+    </div>
+
+   
+ <div class="contest-rating">
+        <h2>Budge</h2>
+        <div class="rating-item badges-section">
+            <div class="label"></div>
+            <div class="badges-container">
+                <div class="badge">Top Interview 150</div>
+                <div class="badge">Top SQL 50</div>
+                <div class="badge">Top 100 Liked</div>
+                <div class="badge">Most Recent Badge</div>
+                <div class="badge">Top SQL 50</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>
