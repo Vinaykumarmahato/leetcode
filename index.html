@@ -10,51 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #ea49b9;
+        }
+
+        /* Header Styles */
         .site-header {
-            background-color: #4285f4;
+            background-color: #6a34ddc5;
             color: #fff;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        @media screen and (max-width: 768px) {
-            .profile-container {
-                max-width: 100%;
-            }
-
-            .profile-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-info {
-                margin-top: 20px;
-            }
-
-            .profile-details {
-                flex-direction: column;
-            }
-
-            .profile-summary,
-            .profile-skills,
-            .profile-stats,
-            .contest-rating,
-            .photo-section {
-                flex: 1 1 100%;
-                margin: 10px 0;
-            }
-
-            .info-item {
-                flex: 1 1 100%;
-            }
-        }
-
-        @media screen and (max-width: 992px) {
-            .skill-category {
-                flex: 1 1 100%;
-            }
         }
 
         .logo-container {
@@ -63,7 +35,6 @@
 
         .logo {
             width: 60px;
-            /* Adjust the size as needed */
             height: auto;
         }
 
@@ -83,26 +54,17 @@
             text-decoration: underline;
         }
 
-
-
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        background-color: white; /* Replace with your actual image file name */
-            color: #333;
-        }
-
+        /* Profile Container Styles */
         .profile-container {
             max-width: 1080px;
             margin: 50px auto;
             background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(211, 49, 198, 0.898);
             border-radius: 10px;
             overflow: hidden;
         }
 
+        /* Profile Header Styles */
         .profile-header {
             display: flex;
             flex-wrap: wrap;
@@ -120,27 +82,36 @@
             height: 80px;
         }
 
+        /* Responsive Profile Image Styles */
+        @media screen and (max-width: 768px) {
+            .profile-header img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
         .profile-info {
             flex: 1;
         }
 
         .profile-info h1 {
-    margin: 0;
-    font-size: 24px;
-    margin-left: 250px; /* Default margin */
+            margin: 0;
+            font-size: 24px;
+            margin-left: 250px;
 
-    /* Responsive styles */
-    @media screen and (max-width: 768px) {
-        font-size: 20px;
-        margin-left: 20px;
-    }
+            /* Responsive styles */
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+                margin-left: 20px;
+            }
 
-    @media screen and (max-width: 480px) {
-        font-size: 18px;
-        margin-left: 10px;
-    }
-}
-
+            @media screen and (max-width: 480px) {
+                font-size: 18px;
+                margin-left: 10px;
+            }
+        }
 
         .profile-info p {
             margin: 5px 0;
@@ -148,15 +119,17 @@
         }
 
         button {
-            background-color: #010109;
+            background-color: #6a34ddc5;
             color: #fff;
             padding: 8px 16px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
+            margin-top: 20px;
         }
 
+        /* Profile Details Styles */
         .profile-details {
             display: flex;
             flex-wrap: wrap;
@@ -164,6 +137,7 @@
             padding: 20px;
         }
 
+        /* Profile Sections Styles */
         .profile-summary,
         .profile-skills,
         .profile-stats,
@@ -172,27 +146,30 @@
             flex: 1 1 100%;
             margin: 10px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(235, 18, 155, 0.572);
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
+        /* Profile Section Headers Styles */
         .profile-summary h2,
         .profile-skills h2,
         .profile-stats h2,
         .contest-rating h2,
         .photo-section h2 {
-            background-color: #4285f4;
+            background-color: #6a34ddc5;
             color: #fff;
             padding: 20px;
             margin: 0;
             text-align: center;
         }
 
+        /* Common Styles for H2 Elements */
         h2 {
-            color: #4285f4;
+            color: #6a34ddc5;
         }
 
+        /* Skill Category and Rating Item Styles */
         .skill-category,
         .rating-item {
             padding: 20px;
@@ -202,30 +179,34 @@
         .skill-category:hover,
         .rating-item:hover,
         .photo-section:hover {
-            background: rgba(0, 0, 0, 0.1);
+            background: #3ec0e096;
             transform: scale(1.02);
         }
 
+        /* H3 Styles */
         h3 {
             margin-top: 0;
             font-size: 20px;
             color: #ffc107;
         }
 
+        /* Paragraph Styles */
         p {
             margin: 8px 0;
             font-size: 16px;
-            color: #333;
+            color: #ea49b9;
         }
 
+        /* Badge Styles */
         .badge {
-            background-color: #4caf50;
+            background-color: #6a34ddc5;
             color: #fff;
             padding: 8px;
             border-radius: 5px;
             display: inline-block;
         }
 
+        /* Contest Rating Styles */
         .contest-rating .rating-item {
             display: flex;
             justify-content: space-between;
@@ -241,23 +222,24 @@
         }
 
         .contest-rating .label {
-            color: #777;
+            color: #ea49b9;
             font-weight: bold;
         }
 
         .contest-rating .value {
             font-size: 18px;
-            color: #4285f4;
+            color: #6a34ddc5;
         }
 
         .contest-rating .badge {
-            background-color: #4caf50;
+            background-color: #ef46bcda;
             color: #fff;
             padding: 8px;
             border-radius: 5px;
             display: inline-block;
         }
 
+        /* Photo Section Styles */
         .photo-section {
             max-width: 100%;
             margin: 20px 0;
@@ -307,6 +289,7 @@
             font-size: 14px;
         }
 
+        /* Media Queries */
         @media screen and (min-width: 768px) {
 
             .profile-summary,
@@ -326,9 +309,47 @@
             .contest-rating,
             .photo-section {
                 flex: 1 1 calc(33.33% - 20px);
+                box-shadow: #e05cce;
             }
         }
 
+        /* Profile Skills Styles */
+        .profile-skills {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            transition: box-shadow 0.3s ease-in-out;
+            max-width: 1080px;
+            /* Set maximum width */
+            height: 720px;
+            /* Set height */
+        }
+
+        .profile-skills:hover {
+            box-shadow: 0 4px 8px rgba(255, 105, 180, 0.5);
+            /* Pink shadow on hover */
+        }
+
+        .skill-category {
+            margin-top: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 18px;
+            color: #ff0066;
+            /* Pink color for skill categories */
+            margin-bottom: 10px;
+        }
+
+        .skill-category p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+
+        /* Profile Summary Styles */
         .profile-summary {
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -336,13 +357,15 @@
             padding: 20px;
             margin: 10px;
             transition: transform 0.3s ease;
+            box-shadow: #ea49b9;
         }
 
         .profile-summary h2 {
-            background-color: #4285f4;
+            background-color: #6a34ddc5;
             color: #fff;
             padding: 20px;
             margin: 0;
+            box-shadow: #e05cce;
             text-align: center;
         }
 
@@ -356,8 +379,8 @@
             flex: 1 1 calc(50% - 10px);
             margin: 10px;
             padding: 15px;
-            background-color: #f5f5f5;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            background-color: rgb(235, 114, 227);
+            box-shadow: 0 0 5px rgba(228, 51, 190, 0.844);
             border-radius: 5px;
             display: flex;
             flex-direction: column;
@@ -366,17 +389,16 @@
 
         .info-label {
             font-weight: bold;
-            color: #4285f4;
+            color: #6a34ddc5;
         }
 
         .info-value {
             margin-top: 5px;
             font-size: 16px;
-            color: #333;
+            color: #fdbe00;
         }
 
-        /* Add the following CSS inside your existing style tag or external CSS file */
-
+        /* Badges Section Styles */
         .badges-section {
             flex: 1 1 100%;
         }
@@ -397,27 +419,15 @@
             display: inline-block;
         }
 
-        button {
-            background-color: #4285f4;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
+        /* Button Hover Effect */
         button:hover {
-            background-color: #3c74e6;
+            background-color: #e05cce;
         }
 
+        /* Anchor Tag Styles */
         a {
             text-decoration: none;
         }
-
-
-        
     </style>
     <title>LeetCode Profile</title>
 </head>
@@ -435,40 +445,14 @@
                     management, and system design. Fluent in both Hindi and English communication. 5 years teaching
                     experience in Class 8th, 9th, 10th, 11th & 12th.</p>
 
-                    <a href="https://advindiancoder.github.io/Linktree/"> <button>Know More</button></a>
-               
+                <a href="https://leetcode.com/vinaykumarADV/"> <button>Know More</button></a>
+
             </div>
         </div>
 
-        <div class="profile-summary">
-            <h2>ADV Indian Coder | CEO & Founder</h2>
-            <div class="summary-info">
-                <div class="info-item">
-                    <span class="info-label">Location:</span>
-                    <span class="info-value">India</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Education:</span>
-                    <span class="info-value">DSCET (Anna University)</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Website:</span>
-                    <a href="https://advindiancoder.com" target="_blank" class="info-value">advindiancoder.com</a>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">GitHub:</span>
-                    <span class="info-value">ADVindiancoder</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Twitter:</span>
-                    <span class="info-value">ADV_India_coder</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">LinkedIn:</span>
-                    <span class="info-value">vinay-kumar860964</span>
-                </div>
-            </div>
-        </div>
+
+      
+
 
 
         <div class="profile-skills">
@@ -501,80 +485,281 @@
 
         <div class="contest-rating">
             <h2>Contest Rating</h2>
-    
+
             <div class="rating-item">
                 <div class="label">Global Ranking</div>
                 <div class="value">395,210/469,284</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Attended</div>
                 <div class="value">5</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Top</div>
                 <div class="value">84.52%</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Solved Problems</div>
                 <div class="value">698</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Solved Easy</div>
                 <div class="value">242 / 768</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Beats 99.0%</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Solved Medium</div>
                 <div class="value">373 / 1572</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Beats 98.5%</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Solved Hard</div>
                 <div class="value">83 / 653</div>
             </div>
-    
+
             <div class="rating-item">
                 <div class="label">Beats 96.4%</div>
             </div>
+            <div class="profile-stats">
+                <h2>Community Stats</h2>
+                <div class="stat-item">
+                    <span class="stat-label">Views:</span>
+                    <span class="stat-value">11k</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Last week:</span>
+                    <span class="stat-value">600</span>
+                </div>
+                <!-- Add more stats as needed -->
+            </div>
 
-        <div class="profile-stats">
-            <h2>Community Stats</h2>
-            <p>Views: 11k</p>
-            <p>Last week: 600</p>
-            <!-- Add more stats as needed -->
         </div>
-    </div>
 
-   
- <div class="contest-rating">
-        <h2>Budge</h2>
-        <div class="rating-item badges-section">
-            <div class="label"></div>
-            <div class="badges-container">
-                <div class="badge">Top Interview 150</div>
-                <div class="badge">Top SQL 50</div>
-                <div class="badge">Top 100 Liked</div>
-                <div class="badge">Most Recent Badge</div>
-                <div class="badge">Top SQL 50</div>
+
+        <div class="contest-rating">
+            <h2>Budge</h2>
+            <div class="rating-item badges-section">
+                <div class="label"></div>
+                <div class="badges-container">
+
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/Top_SQL_50.png"
+                                alt="Badge Image 3" class="badge-image">
+                            <p class="badge-title">Top SQL 50</p>
+                            <p class="badge-date">Date: 2023-10-09</p>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/Top_100_Liked-1.png"
+                                alt="Badge Image 3" class="badge-image">
+                            <p class="badge-title">Top Interview 150</p>
+                            <p class="badge-date">Date: 2023-05-29</p>
+                        </div>
+                    </div>
+
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/Top_100_Liked.png"
+                                alt="Badge Image 3" class="badge-image">
+                            <p class="badge-title">Top 100 Liked</p>
+                            <p class="badge-date">Date: 2023-05-29</p>
+                        </div>
+                    </div>
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B_%E5%9F%BA%E7%A1%80.png"
+                                alt="Badge Image 4" class="badge-image">
+                            <p class="badge-title">Programming Skills II</p>
+                            <p class="badge-date">Date: 2023-05-29</p>
+                        </div>
+                    </div>
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/LeetCode_75.png"
+                                alt="Badge Image 5" class="badge-image">
+                            <p class="badge-title">LeetCode 75</p>
+                            <p class="badge-date">Date: 2023-05-27</p>
+                        </div>
+                    </div>
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/SQLI.png" alt="Badge Image 6"
+                                class="badge-image">
+                            <p class="badge-title">SQL I</p>
+                            <p class="badge-date">Date: 2023-05-15</p>
+                        </div>
+                    </div>
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/algorithm_II.png"
+                                alt="Badge Image 7" class="badge-image">
+                            <p class="badge-title">Algorithm II</p>
+                            <p class="badge-date">Active</p>
+                        </div>
+                    </div>
+
+                    <div class="badge">
+                        <div class="badge-content">
+                            <img src="https://assets.leetcode.com/static_assets/others/DS_II.png" alt="Badge Image 8"
+                                class="badge-image">
+                            <p class="badge-title">Data Structure II</p>
+                            <p class="badge-date">Date: 2023-05-07</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            
+        <div class="profile-summary">
+            <h2>ADV Indian Coder</h2>
+            <div class="summary-info">
+                <div class="info-item">
+                    <span class="info-label">Location:</span>
+                    <b><span class="info-value">India</span></b>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Education:</span>
+                    <b> <span class="info-value">DSCET (Anna University)</span></b>
+                </div>
+                <div class="info-item">
+                    <b> <span class="info-label">Website:</span>
+                    </b> <a href="https://advindiancoder.com" target="_blank"
+                        class="info-value"><b>advindiancoder.com</b></a>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">GitHub:</span>
+                    <span class="info-value"><b>ADVindiancoder</b></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Twitter:</span>
+                    <span class="info-value"><b>ADV_India_coder</b></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">LinkedIn:</span>
+                    <span class="info-value"><b>vinay-kumar860964</b></span>
+                </div>
             </div>
         </div>
 
-    </div>
+        </div>
+        <div class="profile-details">
+            <div class="about-me">
+                <h2>About Me</h2>
+                <p>
+                    <B> I'm Vinay Kumar, a passionate Java developer and YouTuber pursuing B.Tech (IT). With a strong
+                        foundation in Java, Python, C, and various web technologies, I aim to make a mark in the tech
+                        industry.
+                    </B>
+                </p>
+                <p>
+                    🗣 Strong communication skills (English, Hindi)<br>
+                    5 years of teaching experience<br>
+                     Java Developer<br>
+                     Front-End Developer <br>
+                     Android Developer
+
+                    🎯 Focused on my own Strat-up Company <strong>ADV Indian Coder</strong>
+                </p>
+            </div>
+
+
+
+            <div class="profile-container">
+                <div class="profile-header">
+                    <img src="founder.png" alt="Profile Image" class="profile-image">
+                    <div class="profile-info">
+                       <B> <h1>Vinay Kumar</h1>
+                        <p class="designation">Java Developer | Front-End Developer | Android App Developer</p></B>
+                    </div>
+                </div>
+
+
+                <div class="technical-skills">
+                    <h2>Technical Skills</h2>
+                    <p>
+                        Java | Python | C | HTML | CSS | JavaScript | MySQL | DBMS | MongoDB | JDBC | Ethical Hacking
+                    </p>
+                    <p>
+                        Technical knowledge in: Fundamentals of Computer Science, OS, Version Control System, Git,
+                        Advanced Java, Database Design, System Design, and more.
+                    </p>
+                </div>
+
+                <div class="domains-of-interest">
+                    <h2>Domains of Interest</h2>
+                    <p>
+                        Java Development | Front-End Development | Android App Development
+                    </p>
+                </div>
+
+                <div class="academic-projects">
+                    <h2>Academic Projects</h2>
+                    <ul>
+                        <li>Covid-19 Vaccine Analysis</li>
+                        <li>Smart Flood Early Warning System</li>
+                        <li>Library Management System</li>
+                        <li>School Management System</li>
+                        <li>College Management System</li>
+                        <li>Hospital Management System</li>
+                    </ul>
+                    <p>✨ Coming Soon:</p>
+                    <ul>
+                        <li>My own Android Application - Clean Street Index (App)</li>
+                        <li>Complete DSA, Java, System Design Lecture on YouTube</li>
+                        <li>Full guide for becoming a Java developer</li>
+                        <li>If this goes down, so does the Internet (Video series)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <ul>
+                    <li>Birthday: 05 September</li>
+                    <li>Website: <a href="https://advindiancoder.com" target="_blank">advindiancoder.com</a></li>
+                    <li>Phone: +91 9931860964</li>
+                    <li>City: Saran, Bihar, India</li>
+                    <li>Age: 21</li>
+                    <li>Degree: B-Tech (IT)</li>
+                    <li>Email: advindiancoder@gmail.com</li>
+                    <li>Freelance: Available</li>
+                </ul>
+            </div>
+        </div>
 
 
     </div>
+
+
+
+    
 </body>
 
 </html>

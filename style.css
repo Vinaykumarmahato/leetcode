@@ -1,58 +1,262 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #f4f4f4;
 }
 
-.profile-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge-content {
+    padding: 16px;
+}
+
+.badge-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.badge-date {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Add additional styling as needed */
+/* ... (previous styles) */
+
+.badge-content {
+    padding: 16px;
+    text-align: center; /* Center the content */
+}
+
+.badge-image {
+    max-width: 100%;
+    max-height: 100px; /* Adjust the maximum height as needed */
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* ... (previous styles) */
+.profile-summary {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.profile-summary:hover {
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.5); /* Pink shadow on hover */
+}
+
+.profile-summary h2 {
+    color: #333;
+}
+
+.summary-info {
+    margin-top: 10px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #777;
+}
+
+.info-value {
+    color: #333;
+}
+
+.info-value a {
+    color: #ff0066; /* Pink color for links */
+    text-decoration: none;
+}
+
+.info-value a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Stats Styles */
+.profile-stats {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+    max-width: 1080px; /* Set maximum width */
+    height: 200px; /* Set height */
+}
+
+.profile-stats:hover {
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.5); /* Pink shadow on hover */
+}
+
+.profile-stats h2 {
+    font-size: 24px;
+    color: #fff; /* Dark purple color for the header */
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.stat-value {
+    color: #6a34ddc5; /* Dark purple color for the value */
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+    .profile-stats {
+        height: auto;
+    }
+}
+
+
+.profile-container {
+    max-width: 1080px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgb(89, 10, 129);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .profile-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    padding: 20px;
+    background-color: #FFF;
+    color: #fff;
 }
 
-.profile-header img {
+.profile-image {
     border-radius: 50%;
     margin-right: 20px;
-    max-width: 100px; /* Adjust as needed */
+    border: 3px solid #8ce6df;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 .profile-info {
     flex: 1;
 }
 
-.profile-info h1 {
+.profile-info h1, .profile-info p {
     margin: 0;
-    font-size: 24px;
-    color: #333;
 }
 
-.username, .rank {
-    margin: 5px 0;
-    color: #666;
+.designation {
+    font-size: 18px;
+    color: #df55fa;
 }
 
-.bio {
-    color: #333;
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
 }
 
-button {
-    background-color: #007BFF;
+.about-me,
+.technical-skills,
+.domains-of-interest,
+.academic-projects,
+.contact-info {
+    flex: 1 1 calc(50% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.about-me h2,
+.technical-skills h2,
+.domains-of-interest h2,
+.academic-projects h2,
+.contact-info h2 {
+    background-color: #6a34dd;
     color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    border-radius: 10px;
 }
 
-/* Rest of the styles... */
+.about-me p,
+.technical-skills p,
+.domains-of-interest p,
+.contact-info ul li {
+    font-size: 16px;
+    color: #f14fce;
+    line-height: 1.6;
+}
+
+.academic-projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.academic-projects ul li {
+    margin-bottom: 8px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #6a34dd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #b847c2ec;
+}
+
